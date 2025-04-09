@@ -1,0 +1,52 @@
+modules = ["swift"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "iOS Simulator"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "ios-app-simulation"
+
+[[workflows.workflow]]
+name = "iOS Simulator"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "swift run GreekPolytonicKeyboardApp"
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "ios-app-simulation"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "xcrun simctl boot \"iPhone 14\" && xcrun simctl install booted . && xcrun simctl launch booted com.replit.GreekPolytonicKeyboardApp"
+
+[deployment]
+run = ["sh", "-c", "swift run GreekPolytonicKeyboardApp"]
