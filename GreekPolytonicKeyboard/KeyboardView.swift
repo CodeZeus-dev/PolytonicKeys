@@ -152,7 +152,7 @@ class KeyboardView: UIView {
         
         // Keyboard switch key
         keyboardSwitchButton = KeyButton(title: "🌐")
-        keyboardSwitchButton.widthAnchor.constraint(equalToConstant, 45).isActive = true
+        keyboardSwitchButton.widthAnchor.constraint(equalToConstant: 45).isActive = true
         keyboardSwitchButton.addTarget(self, action: #selector(switchKeyboard), for: .touchUpInside)
         
         // Space key
@@ -161,12 +161,12 @@ class KeyboardView: UIView {
         
         // Return key
         returnButton = KeyButton(title: "⏎")
-        returnButton.widthAnchor.constraint(equalToConstant, 60).isActive = true
+        returnButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         returnButton.addTarget(self, action: #selector(returnPressed), for: .touchUpInside)
         
         // Backspace key
         backspaceButton = KeyButton(title: "⌫")
-        backspaceButton.widthAnchor.constraint(equalToConstant, 45).isActive = true
+        backspaceButton.widthAnchor.constraint(equalToConstant: 45).isActive = true
         backspaceButton.addTarget(self, action: #selector(backspacePressed), for: .touchUpInside)
         
         bottomRow.addArrangedSubview(keyboardSwitchButton)
@@ -219,8 +219,8 @@ class KeyboardView: UIView {
             NSLayoutConstraint.activate([
                 popupView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
                 popupView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -5),
-                popupView.widthAnchor.constraint(equalToConstant, 200),
-                popupView.heightAnchor.constraint(equalToConstant, 50)
+                popupView.widthAnchor.constraint(equalToConstant: 200),
+                popupView.heightAnchor.constraint(equalToConstant: 50)
             ])
         }
     }

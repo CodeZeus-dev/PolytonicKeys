@@ -32,7 +32,6 @@ task = "packager.installForAll"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "swift run GreekPolytonicKeyboardApp"
-waitForPort = 5000
 
 [[workflows.workflow]]
 name = "ios-app-simulation"
