@@ -26,9 +26,46 @@ class GreekCharacterProvider {
         "ω": ["ώ", "ὼ", "ῶ", "ὠ", "ὡ", "ὢ", "ὣ", "ὤ", "ὥ", "ὦ", "ὧ", "ᾠ", "ᾡ", "ᾢ", "ᾣ", "ᾤ", "ᾥ", "ᾦ", "ᾧ", "ῲ", "ῳ", "ῴ", "ῷ"]
     ]
     
-    // Get polytonic options for a specified vowel
+    // User preferences for vowel variations (tracking frequently used combinations)
+    private var userPreferences: [String: [String: Int]] = [:]
+    
+    // Text predictor for suggestions
+    private let textPredictor = GreekTextPredictor()
+    
+    init() {
+        // Initialize user preferences with default weights
+        for (vowel, options) in vowelOptions {
+            userPreferences[vowel] = [:]
+            for option in options {
+                // Start with a base usage frequency of 1
+                userPreferences[vowel]?[option] = 1
+            }
+        }
+    }
+    
+    // Get polytonic options for a specified vowel, ordered by user preference
     func getOptionsForVowel(_ vowel: String) -> [String] {
-        // Check if we have options for this vowel, and limit to manageable number (8)
+        // First check if we have learned preferences
+        if let preferences = userPreferences[vowel], !preferences.isEmpty {
+            // Get most frequently used options from the text predictor
+            let predictedOptions = textPredictor.getSuggestedPolytonicVariations(for: vowel)
+            
+            // If the predictor has suggestions, use those
+            if !predictedOptions.isEmpty {
+                return predictedOptions
+            }
+            
+            // Otherwise, use user preferences sorted by frequency
+            let sortedOptions = preferences.sorted { $0.value > $1.value }
+                .prefix(8)
+                .map { $0.key }
+            
+            if !sortedOptions.isEmpty {
+                return sortedOptions
+            }
+        }
+        
+        // Fallback to default options
         if let options = vowelOptions[vowel], !options.isEmpty {
             if options.count > 8 {
                 // Return most commonly used options if there are too many
@@ -36,7 +73,29 @@ class GreekCharacterProvider {
             }
             return options
         }
+        
         return []
+    }
+    
+    // Record that a user selected a specific polytonic character
+    func recordSelection(of character: String, for vowel: String) {
+        // Update user preferences
+        userPreferences[vowel]?[character, default: 0] += 1
+    }
+    
+    // Learn from user input text
+    func learnFromText(_ text: String) {
+        textPredictor.learnFromInput(text: text)
+    }
+    
+    // Get word suggestions based on current input
+    func getSuggestedWords(for partialWord: String) -> [String] {
+        return textPredictor.getSuggestedWords(for: partialWord)
+    }
+    
+    // Get next character predictions
+    func getPredictedNextCharacters(for text: String) -> [String] {
+        return textPredictor.getPredictedNextCharacters(for: text)
     }
     
     // Optional method to get a description of what each diacritical mark does
