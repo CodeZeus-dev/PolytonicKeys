@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C4A7A4892DA6F69D00DAB9D7 /* GreekPolytonicKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C4A7A4822DA6F69D00DAB9D7 /* GreekPolytonicKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C4A7A4612DA6F57800DAB9D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,12 +25,34 @@
 			remoteGlobalIDString = C4A7A4492DA6F57600DAB9D7;
 			remoteInfo = GreekPolytonicKeyboardApp;
 		};
+		C4A7A4872DA6F69D00DAB9D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4A7A4422DA6F57600DAB9D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A7A4812DA6F69D00DAB9D7;
+			remoteInfo = GreekPolytonicKeyboard;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C4A7A48E2DA6F69D00DAB9D7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C4A7A4892DA6F69D00DAB9D7 /* GreekPolytonicKeyboard.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C4A7A44A2DA6F57600DAB9D7 /* GreekPolytonicKeyboardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreekPolytonicKeyboardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A7A4602DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreekPolytonicKeyboardAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A7A46A2DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreekPolytonicKeyboardAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A7A4822DA6F69D00DAB9D7 /* GreekPolytonicKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreekPolytonicKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +62,13 @@
 				Info.plist,
 			);
 			target = C4A7A4492DA6F57600DAB9D7 /* GreekPolytonicKeyboardApp */;
+		};
+		C4A7A48D2DA6F69D00DAB9D7 /* Exceptions for "GreekPolytonicKeyboard" folder in "GreekPolytonicKeyboard" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C4A7A4812DA6F69D00DAB9D7 /* GreekPolytonicKeyboard */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -56,6 +89,14 @@
 		C4A7A46D2DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = GreekPolytonicKeyboardAppUITests;
+			sourceTree = "<group>";
+		};
+		C4A7A4832DA6F69D00DAB9D7 /* GreekPolytonicKeyboard */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C4A7A48D2DA6F69D00DAB9D7 /* Exceptions for "GreekPolytonicKeyboard" folder in "GreekPolytonicKeyboard" target */,
+			);
+			path = GreekPolytonicKeyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -82,6 +123,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4A7A47F2DA6F69D00DAB9D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +139,7 @@
 				C4A7A44C2DA6F57600DAB9D7 /* GreekPolytonicKeyboardApp */,
 				C4A7A4632DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppTests */,
 				C4A7A46D2DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppUITests */,
+				C4A7A4832DA6F69D00DAB9D7 /* GreekPolytonicKeyboard */,
 				C4A7A44B2DA6F57600DAB9D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +150,7 @@
 				C4A7A44A2DA6F57600DAB9D7 /* GreekPolytonicKeyboardApp.app */,
 				C4A7A4602DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppTests.xctest */,
 				C4A7A46A2DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppUITests.xctest */,
+				C4A7A4822DA6F69D00DAB9D7 /* GreekPolytonicKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,10 +165,12 @@
 				C4A7A4462DA6F57600DAB9D7 /* Sources */,
 				C4A7A4472DA6F57600DAB9D7 /* Frameworks */,
 				C4A7A4482DA6F57600DAB9D7 /* Resources */,
+				C4A7A48E2DA6F69D00DAB9D7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C4A7A4882DA6F69D00DAB9D7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C4A7A44C2DA6F57600DAB9D7 /* GreekPolytonicKeyboardApp */,
@@ -176,6 +228,28 @@
 			productReference = C4A7A46A2DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C4A7A4812DA6F69D00DAB9D7 /* GreekPolytonicKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4A7A48A2DA6F69D00DAB9D7 /* Build configuration list for PBXNativeTarget "GreekPolytonicKeyboard" */;
+			buildPhases = (
+				C4A7A47E2DA6F69D00DAB9D7 /* Sources */,
+				C4A7A47F2DA6F69D00DAB9D7 /* Frameworks */,
+				C4A7A4802DA6F69D00DAB9D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C4A7A4832DA6F69D00DAB9D7 /* GreekPolytonicKeyboard */,
+			);
+			name = GreekPolytonicKeyboard;
+			packageProductDependencies = (
+			);
+			productName = GreekPolytonicKeyboard;
+			productReference = C4A7A4822DA6F69D00DAB9D7 /* GreekPolytonicKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,6 +271,9 @@
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = C4A7A4492DA6F57600DAB9D7;
 					};
+					C4A7A4812DA6F69D00DAB9D7 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 				};
 			};
 			buildConfigurationList = C4A7A4452DA6F57600DAB9D7 /* Build configuration list for PBXProject "GreekPolytonicKeyboardApp" */;
@@ -216,6 +293,7 @@
 				C4A7A4492DA6F57600DAB9D7 /* GreekPolytonicKeyboardApp */,
 				C4A7A45F2DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppTests */,
 				C4A7A4692DA6F57800DAB9D7 /* GreekPolytonicKeyboardAppUITests */,
+				C4A7A4812DA6F69D00DAB9D7 /* GreekPolytonicKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +314,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C4A7A4682DA6F57800DAB9D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A7A4802DA6F69D00DAB9D7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +351,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4A7A47E2DA6F69D00DAB9D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -278,6 +370,11 @@
 			isa = PBXTargetDependency;
 			target = C4A7A4492DA6F57600DAB9D7 /* GreekPolytonicKeyboardApp */;
 			targetProxy = C4A7A46B2DA6F57800DAB9D7 /* PBXContainerItemProxy */;
+		};
+		C4A7A4882DA6F69D00DAB9D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4A7A4812DA6F69D00DAB9D7 /* GreekPolytonicKeyboard */;
+			targetProxy = C4A7A4872DA6F69D00DAB9D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -529,6 +626,56 @@
 			};
 			name = Release;
 		};
+		C4A7A48B2DA6F69D00DAB9D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NUMPUF67FM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GreekPolytonicKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GreekPolytonicKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephyrean.GreekPolytonicKeyboardApp.GreekPolytonicKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4A7A48C2DA6F69D00DAB9D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NUMPUF67FM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GreekPolytonicKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GreekPolytonicKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephyrean.GreekPolytonicKeyboardApp.GreekPolytonicKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -564,6 +711,15 @@
 			buildConfigurations = (
 				C4A7A47C2DA6F57800DAB9D7 /* Debug */,
 				C4A7A47D2DA6F57800DAB9D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4A7A48A2DA6F69D00DAB9D7 /* Build configuration list for PBXNativeTarget "GreekPolytonicKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A7A48B2DA6F69D00DAB9D7 /* Debug */,
+				C4A7A48C2DA6F69D00DAB9D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
