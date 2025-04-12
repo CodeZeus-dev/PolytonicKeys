@@ -22,6 +22,9 @@ class KeyboardViewController: UIInputViewController {
     private let keyboardHeight: CGFloat = 220
     private let suggestionBarHeight: CGFloat = 40
     
+    // Flag to track keyboard mode (letters vs numbers)
+    private var isShowingNumberKeyboard: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -177,10 +180,39 @@ class KeyboardViewController: UIInputViewController {
     
     // Sets up the keyboard view
     private func setupKeyboardView() {
+    // Default to the Greek keyboard
+        setupGreekKeyboard()
+    }
+    
+    // Sets up the standard Greek keyboard
+    private func setupGreekKeyboard() {
         // Create keyboard view with the full width of the input view
         keyboardView = KeyboardView(frame: view.frame)
         keyboardView.delegate = self
         keyboardView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        // Add the keyboard view to the hierarchy
+        view.addSubview(keyboardView)
+        
+        // Set up constraints for the keyboard view
+        NSLayoutConstraint.activate([
+            keyboardView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            keyboardView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            keyboardView.topAnchor.constraint(equalTo: suggestionBar.bottomAnchor),
+            keyboardView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    // Sets up the numeric keyboard with numbers and symbols
+    private func setupNumberKeyboard() {
+        // Create a numeric keyboard view
+        let numericKeyboardView = NumericKeyboardView(frame: view.frame)
+        numericKeyboardView.delegate = self
+        numericKeyboardView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // This is a custom class that we need to create for the numeric keyboard
+        keyboardView = numericKeyboardView
         
         // Add the keyboard view to the hierarchy
         view.addSubview(keyboardView)
@@ -259,5 +291,23 @@ extension KeyboardViewController: KeyboardViewDelegate {
         // Reset current word and suggestions
         currentWord = ""
         updateSuggestions([])
+    }
+    
+    func toggleNumberMode() {
+        // Implementation of the number keyboard toggling
+        if let currentView = view.subviews.first(where: { $0 is KeyboardView }) {
+            // Remove the current keyboard view
+            currentView.removeFromSuperview()
+            
+            if isShowingNumberKeyboard {
+                // Switch back to Greek keyboard
+                setupGreekKeyboard()
+                isShowingNumberKeyboard = false
+            } else {
+                // Switch to numeric keyboard
+                setupNumberKeyboard()
+                isShowingNumberKeyboard = true
+            }
+        }
     }
 }

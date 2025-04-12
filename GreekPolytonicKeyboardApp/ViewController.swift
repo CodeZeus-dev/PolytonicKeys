@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
         
         // Set up title label
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +27,7 @@ class ViewController: UIViewController {
         
         // Set up instruction label
         instructionLabel.translatesAutoresizingMaskIntoConstraints = false
-        instructionLabel.text = "To enable this keyboard, go to:\nSettings > General > Keyboard > Keyboards > Add New Keyboard... > Greek Polytonic\n\nThen long-press vowels for polytonic options."
+        instructionLabel.text = "To enable this keyboard, go to:\nSettings > General > Keyboard > Keyboards > Add New Keyboard... > Greek Polytonic\n\nThen long-press vowels (α, ε, η, ι, ο, υ, ω) for polytonic options."
         instructionLabel.numberOfLines = 0
         instructionLabel.textAlignment = .center
         instructionLabel.font = UIFont.systemFont(ofSize: 16)
